@@ -1,20 +1,19 @@
 package com.example.test.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "orders")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String productName;
-    private double amount;
 
-    public Order(Integer id, String productName, double amount){
+    private String productName;
+    private int amount;
+
+    public Order(Integer id, String productName, int amount){
         this.id = id;
         this.productName = productName;
         this.amount = amount;
@@ -44,7 +43,7 @@ public class Order {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 }
