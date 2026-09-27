@@ -211,9 +211,3 @@ How do I verify the result?
 Asim Khot
 
 Learning Java Backend Development with Spring Boot.
-
-
-### Suggested repository name
-
-```text
-spring-boot-testing
