@@ -20,21 +20,16 @@ public class OrderService {
 
     public Order getOrder(Integer id){
 
-        log.trace("TRACE : Fetching order with id : {} ", id);
-        log.debug("DEBUG : Fetching order with id : {} ", id);
-        log.info("INFO : Fetching order with id : {} ", id);
-        log.warn("WARN : Checking order with id : {} ", id);
-        log.error("ERROR : Checking order with id : {} ", id);
-
-
+        log.info("Fetching order with id : {} ", id);
         return orderRepository.findById(id).orElseThrow(()
                 -> {
-            log.error("ERROR : Order not found with id : {} ", id);
+            log.error("Order not found with id : {} ", id);
             return new RuntimeException("Order not found with id " + id);
         });
     }
 
     public void cancelOrder(Integer id){
+
         Order order = orderRepository.findById(id).orElseThrow(()
         ->
                 new RuntimeException("Order not Found"));
